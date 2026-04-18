@@ -9,7 +9,7 @@ export default function ContactPage() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    const text = encodeURIComponent(`Hi Ketan, I'm ${form.name}. My number is ${form.phone}. ${form.message}`)
+    const text = encodeURIComponent(`Hi Woodi, I'm ${form.name}. My number is ${form.phone}. ${form.message}`)
     window.open(`https://wa.me/919824064960?text=${text}`, '_blank')
     setSubmitted(true)
   }

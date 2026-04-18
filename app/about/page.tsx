@@ -170,7 +170,7 @@ export default function AboutPage() {
       <section className="py-16 md:py-20 text-center" style={{ background: 'var(--terracotta)' }}>
         <div className="max-w-2xl mx-auto px-5 reveal">
           <h2 className="font-display text-3xl md:text-4xl font-semibold mb-4" style={{ color: 'var(--cream)' }}>
-            Let&apos;s design your kitchen together.
+            Let&apos;s design your project together.
           </h2>
           <p className="font-body text-base mb-8" style={{ color: 'rgba(245,240,232,0.85)' }}>
             Start with a free home visit — no commitment needed.

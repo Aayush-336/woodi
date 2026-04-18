@@ -24,8 +24,8 @@ export default function Home() {
               className="font-display text-5xl md:text-7xl font-semibold leading-[1.05] mb-6"
               style={{ color: 'var(--cream)' }}
             >
-              Furniture built<br />
-              <em style={{ color: 'var(--terracotta)' }}>personally,</em><br />
+              Customized<br />
+              <em style={{ color: 'var(--terracotta)' }}>modular furniture,</em><br />
               by Woodi.
             </h1>
             <p className="font-body text-lg md:text-xl leading-relaxed mb-10 max-w-xl" style={{ color: 'var(--warm)' }}>
@@ -33,7 +33,7 @@ export default function Home() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <a
-                href="https://wa.me/919824064960?text=Hi%20Ketan%2C%20I%27d%20like%20a%20free%20kitchen%20consultation."
+                href="https://wa.me/919824064960?text=Hi%20Woodi%2C%20I%27d%20like%20a%20free%20kitchen%20consultation."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="font-sans text-sm font-medium px-8 py-4 rounded-full text-center transition-all duration-300 hover:shadow-xl hover:-translate-y-0.5"
@@ -258,14 +258,14 @@ export default function Home() {
       <section className="py-20 md:py-24" style={{ background: 'var(--terracotta)' }}>
         <div className="max-w-3xl mx-auto px-5 md:px-8 text-center reveal">
           <h2 className="font-display text-4xl md:text-5xl font-semibold mb-4" style={{ color: 'var(--cream)' }}>
-            Ready for a kitchen you&apos;ll love?
+            Ready to transform your space?
           </h2>
           <p className="font-body text-base md:text-lg mb-8" style={{ color: 'rgba(245,240,232,0.85)' }}>
-            A free home visit costs nothing. Let&apos;s see what&apos;s possible for your kitchen, wardrobe, or Turnkey project.
+            A free home visit costs nothing. Let&apos;s see what&apos;s possible for your Kitchen, Wardrobe or Turnkey project.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href="https://wa.me/919824064960?text=Hi%20Ketan%2C%20I%27d%20like%20a%20free%20home%20visit."
+              href="https://wa.me/919824064960?text=Hi%20Woodi%2C%20I%27d%20like%20a%20free%20home%20visit."
               target="_blank"
               rel="noopener noreferrer"
               className="font-sans text-sm font-medium px-8 py-4 rounded-full transition-all duration-300 hover:shadow-xl hover:-translate-y-0.5"
