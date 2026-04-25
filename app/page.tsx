@@ -62,7 +62,7 @@ export default function Home() {
       {/* ── STATS ─────────────────────────────────────────── */}
       <section style={{ background: 'var(--sand)' }}>
         <div className="max-w-6xl mx-auto px-5 md:px-8 py-14 md:py-16">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-4 text-center">
+          <div className="grid grid-cols-3 md:grid-cols-3 gap-8 md:gap-4 text-center">
             {[
               { num: '4+', label: 'Years of Experience' },
               { num: '30+', label: 'Projects Delivered' },
