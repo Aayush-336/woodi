@@ -1,8 +1,16 @@
 'use client'
 import { useScrollReveal } from '@/components/useScrollReveal'
+import Image from 'next/image'
 
 export default function ServicesPage() {
   useScrollReveal()
+
+  const serviceTabs = [
+    { label: 'Kitchens', href: '#kitchens' },
+    { label: 'Wardrobes', href: '#wardrobes' },
+    { label: 'Turnkey Projects', href: '#furniture' },
+    { label: 'Catalogues', href: '#catalogues' },
+  ]
 
   const marketingPdfs = [
     { name: 'Kitchens Catalogue', href: '/marketing/kitchens.pdf' },
@@ -29,6 +37,106 @@ export default function ServicesPage() {
     { name: 'Loft & Utility Storage', desc: 'High-capacity overhead storage and utility wardrobes for balconies, study rooms, and laundry areas.' },
   ]
 
+  const kitchenGallery = [
+    '/projects/Rehaben Subhashish/project-01.jpeg',
+    '/projects/Prafulbhai Ghatlodia/project-01.jpg',
+    '/projects/Aniv Jhaveri/project-01.jpg',
+    '/projects/Dushyantbhai/project-01.jpg',
+    '/projects/Kitchens/kitchen-01.jpeg',
+    '/projects/Kitchens/kitchen-02.jpeg',
+    '/projects/Nareshbhai Chauhan/project-01.jpg',
+    '/projects/kitchen_01.jpeg',
+  ]
+
+  const wardrobeGallery = [
+    '/projects/Aniv Jhaveri/project-03.jpeg',
+    '/projects/Aniv Jhaveri/project-04.jpeg',
+    '/projects/Aniv Jhaveri/project-05.jpeg',
+    '/projects/wardrobe_01.jpeg',
+    '/projects/wardrobe_02.jpeg',
+  ]
+
+  const turnkeyProjects = [
+    {
+      client: 'Aniv Jhaveri',
+      images: [
+        '/projects/Aniv Jhaveri/project-01.jpg',
+        '/projects/Aniv Jhaveri/project-02.jpg',
+        '/projects/Aniv Jhaveri/project-03.jpeg',
+        '/projects/Aniv Jhaveri/project-04.jpeg',
+        '/projects/Aniv Jhaveri/project-05.jpeg',
+        '/projects/Aniv Jhaveri/project-06.jpeg',
+      ],
+    },
+    {
+      client: 'Nareshbhai Chauhan',
+      images: [
+        '/projects/Nareshbhai Chauhan/project-01.jpg',
+        '/projects/Nareshbhai Chauhan/project-02.jpg',
+        '/projects/Nareshbhai Chauhan/project-03.jpg',
+        '/projects/Nareshbhai Chauhan/project-04.jpg',
+        '/projects/Nareshbhai Chauhan/project-05.jpeg',
+      ],
+      videos: [
+        '/projects/Nareshbhai Chauhan/project-video-01.mp4',
+      ],
+    },
+    {
+      client: 'Dushyantbhai',
+      images: [
+        '/projects/Dushyantbhai/project-01.jpg',
+        '/projects/Dushyantbhai/project-02.jpg',
+        '/projects/Dushyantbhai/project-03.jpeg',
+      ],
+    },
+    {
+      client: 'Rehaben Subhashish',
+      images: [
+        '/projects/Rehaben Subhashish/project-01.jpeg',
+        '/projects/Rehaben Subhashish/project-02.jpeg',
+        '/projects/Rehaben Subhashish/project-03.jpeg',
+      ],
+    },
+    {
+      client: 'Maa Bhavani Caterers',
+      images: [
+        '/projects/Maa Bhavani Caterers/project-01.jpg',
+        '/projects/Maa Bhavani Caterers/project-02.jpg',
+        '/projects/Maa Bhavani Caterers/project-03.jpg',
+      ],
+    },
+    {
+      client: 'Himanshubhai Yogeshvar',
+      images: [
+        '/projects/Himanshubhai Yogeshvar/project-01.jpeg',
+        '/projects/Himanshubhai Yogeshvar/project-02.jpeg',
+      ],
+    },
+    {
+      client: 'Ketanbhai Santivan',
+      images: [
+        '/projects/Ketanbhai Santivan/project-01.jpg',
+        '/projects/Ketanbhai Santivan/project-02.jpg',
+      ],
+    },
+    {
+      client: 'Prafulbhai Ghatlodia',
+      images: [
+        '/projects/Prafulbhai Ghatlodia/project-01.jpg',
+        '/projects/Prafulbhai Ghatlodia/project-02.jpeg',
+        '/projects/Prafulbhai Ghatlodia/project-03.jpeg',
+        '/projects/Prafulbhai Ghatlodia/project-04.jpeg',
+      ],
+    },
+    {
+      client: 'Pravinbhai Ekta',
+      images: [
+        '/projects/Pravinbhai Ekta/project-01.jpg',
+        '/projects/Pravinbhai Ekta/project-02.jpg',
+      ],
+    },
+  ]
+
   return (
     <>
       {/* PAGE HERO */}
@@ -48,6 +156,23 @@ export default function ServicesPage() {
         </div>
       </section>
 
+      <section className="py-6 md:py-8" style={{ background: 'var(--cream)' }}>
+        <div className="max-w-6xl mx-auto px-5 md:px-8">
+          <div className="grid grid-cols-2 md:flex gap-3">
+            {serviceTabs.map((tab) => (
+              <a
+                key={tab.href}
+                href={tab.href}
+                className="text-center rounded-full px-5 py-2.5 font-sans text-sm font-medium border transition-colors hover:bg-[var(--sand)] md:whitespace-nowrap"
+                style={{ borderColor: 'var(--warm)', color: 'var(--charcoal)' }}
+              >
+                {tab.label}
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* KITCHENS SECTION */}
       <section id="kitchens" className="py-20 md:py-28 scroll-mt-20" style={{ background: 'var(--cream)' }}>
         <div className="max-w-6xl mx-auto px-5 md:px-8">
@@ -58,27 +183,31 @@ export default function ServicesPage() {
             </h2>
             <div className="wood-divider mt-5 w-20" />
           </div>
-
-          {/* Gallery placeholders */}
+          <p className="font-sans text-sm tracking-[0.18em] uppercase mb-2 reveal text-right italic" style={{ color: 'var(--terracotta)' }}>
+            Actual Site Photos
+          </p>
+          {/* Gallery */}
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-14 reveal">
-            {[...Array(6)].map((_, i) => (
+            {kitchenGallery.map((image, i) => (
               <div
-                key={i}
+                key={image}
                 className={`rounded-xl overflow-hidden ${i === 0 ? 'col-span-2 row-span-1' : ''}`}
                 style={{
                   aspectRatio: i === 0 ? '2/1' : '1/1',
-                  background: `linear-gradient(${135 + i * 20}deg, var(--sand), var(--warm), var(--terracotta))`,
                   position: 'relative',
                 }}
               >
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <span className="font-sans text-[10px] tracking-[0.15em] uppercase" style={{ color: 'rgba(255,255,255,0.5)' }}>
-                    Kitchen Photo {i + 1}
-                  </span>
-                </div>
+                <Image
+                  src={encodeURI(image)}
+                  alt={`Woodi kitchen project ${i + 1}`}
+                  fill
+                  sizes="(max-width: 768px) 50vw, 33vw"
+                  className="object-cover"
+                />
               </div>
             ))}
           </div>
+          
 
           {/* Kitchen types */}
           <div className="grid md:grid-cols-2 gap-6">
@@ -112,25 +241,28 @@ export default function ServicesPage() {
             </h2>
             <div className="wood-divider mt-5 w-20" />
           </div>
-
-          <div className="grid md:grid-cols-2 gap-8 items-center">
-            {/* Wardrobe photo placeholders */}
+          <p className="font-sans text-sm tracking-[0.18em] uppercase mt-1 reveal text-right italic" style={{ color: 'var(--terracotta)' }}>
+            Actual Site Photos
+          </p>
+          <div className="grid md:grid-cols-2 gap-8 items-center mt-2">
+            {/* Wardrobe gallery */}
             <div className="reveal-left grid grid-cols-2 gap-4">
-              {[...Array(4)].map((_, i) => (
+              {wardrobeGallery.map((image, i) => (
                 <div
-                  key={i}
-                  className="rounded-xl overflow-hidden"
+                  key={image}
+                  className={`rounded-xl overflow-hidden ${i === 0 ? 'col-span-2' : ''}`}
                   style={{
-                    aspectRatio: '1/1',
-                    background: `linear-gradient(${100 + i * 30}deg, var(--warm), var(--bark))`,
+                    aspectRatio: i === 0 ? '2/1' : '1/1',
                     position: 'relative',
                   }}
                 >
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <span className="font-sans text-[10px] tracking-[0.15em] uppercase" style={{ color: 'rgba(255,255,255,0.45)' }}>
-                      Wardrobe {i + 1}
-                    </span>
-                  </div>
+                  <Image
+                    src={encodeURI(image)}
+                    alt={`Woodi wardrobe project ${i + 1}`}
+                    fill
+                    sizes="(max-width: 768px) 50vw, 33vw"
+                    className="object-cover"
+                  />
                 </div>
               ))}
             </div>
@@ -145,42 +277,96 @@ export default function ServicesPage() {
               ))}
             </div>
           </div>
+          
         </div>
       </section>
 
-      {/* CUSTOM FURNITURE */}
+      {/* TURNKEY PROJECTS */}
       <section id="furniture" className="py-20 md:py-28 scroll-mt-20" style={{ background: 'var(--cream)' }}>
         <div className="max-w-6xl mx-auto px-5 md:px-8">
           <div className="text-center mb-14 reveal">
-            <p className="section-label mb-3">Highlighted Service</p>
+            <p className="section-label mb-3">Completed Work</p>
             <h2 className="font-display text-4xl md:text-5xl font-semibold" style={{ color: 'var(--charcoal)' }}>
               Turnkey Projects
             </h2>
-            <p className="font-body text-base mt-4 max-w-2xl mx-auto" style={{ color: 'var(--ash)' }}>
-              Beyond kitchens and wardrobes, we also take up Turnkey projects for coordinated home interiors and built-in furniture.
+            <p className="font-body text-base mt-4 max-w-2xl mx-auto mb-6" style={{ color: 'var(--ash)' }}>
+              For your 2/3/4 BHK house, we offer a complete range of furniture that includes:
             </p>
+            <div
+              className="max-w-3xl mx-auto rounded-2xl px-6 py-5"
+              style={{ background: 'var(--sand)', border: '1px solid rgba(160,82,45,0.18)' }}
+            >
+              <p className="font-sans text-sm md:text-base font-semibold leading-relaxed" style={{ color: 'var(--bark)' }}>
+                Modular Kitchen, Wardrobes, TV Unit, Sofa Set, Dining Table, Double Bed, Dressing & Side Table, Study Table, Safety Door, Temple, and Shoe Rack.
+              </p>
+            </div>
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-5">
-            {[
-              { icon: '📺', name: 'TV Units & Entertainment Walls' },
-              { icon: '🍽️', name: 'Crockery & Display Units' },
-              { icon: '📚', name: 'Study Tables & Shelves' },
-              { icon: '🛁', name: 'Bathroom Vanity Units' },
-            ].map((f, i) => (
-              <div
-                key={i}
-                className={`reveal delay-${i+1} p-6 rounded-2xl text-center transition-all hover:shadow-md hover:-translate-y-1`}
-                style={{ background: 'var(--sand)' }}
-              >
-                <span className="text-3xl block mb-3">{f.icon}</span>
-                <p className="font-sans text-xs font-medium leading-snug" style={{ color: 'var(--charcoal)' }}>{f.name}</p>
+
+          <div className="space-y-12">
+            {turnkeyProjects.map((project, projectIndex) => (
+              <div key={project.client} className={`reveal delay-${(projectIndex % 4) + 1}`}>
+                <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-3 mb-5">
+                  <div>
+                    <p className="section-label mb-2">Client Project</p>
+                    <h3 className="font-display text-2xl md:text-3xl font-semibold" style={{ color: 'var(--charcoal)' }}>
+                      {project.client}
+                    </h3>
+                  </div>
+                  <p className="font-sans text-sm" style={{ color: 'var(--ash)' }}>
+                    Completed project gallery
+                  </p>
+                </div>
+
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                  {project.images.map((image, imageIndex) => (
+                    <a
+                      key={image}
+                      href={encodeURI(image)}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={`group relative overflow-hidden rounded-2xl shadow-sm ${imageIndex === 0 ? 'col-span-2 md:col-span-2' : ''}`}
+                      style={{
+                        aspectRatio: imageIndex === 0 ? '4/3' : '1/1',
+                        background: 'var(--sand)',
+                      }}
+                    >
+                      <Image
+                        src={encodeURI(image)}
+                        alt={`${project.client} project image`}
+                        fill
+                        sizes="(max-width: 768px) 50vw, 25vw"
+                        className="object-cover transition-transform duration-300 group-hover:scale-105"
+                      />
+                    </a>
+                  ))}
+                  {'videos' in project && project.videos
+                    ? project.videos.map((video) => (
+                        <div
+                          key={video}
+                          className="relative overflow-hidden rounded-2xl shadow-sm col-span-2 md:col-span-2"
+                          style={{
+                            aspectRatio: '4/3',
+                            background: 'var(--sand)',
+                          }}
+                        >
+                          <video
+                            controls
+                            preload="metadata"
+                            className="h-full w-full object-cover"
+                          >
+                            <source src={encodeURI(video)} type="video/mp4" />
+                          </video>
+                        </div>
+                      ))
+                    : null}
+                </div>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="py-16 md:py-20" style={{ background: 'var(--sand)' }}>
+      <section id="catalogues" className="py-16 md:py-20 scroll-mt-20" style={{ background: 'var(--sand)' }}>
         <div className="max-w-6xl mx-auto px-5 md:px-8">
           <div className="text-center mb-12 reveal">
             <p className="section-label mb-3">Service Catalogues</p>
@@ -223,7 +409,7 @@ export default function ServicesPage() {
                 Quality you can feel.
               </h2>
               <p className="font-body text-base leading-relaxed mb-6" style={{ color: 'var(--warm)' }}>
-                We use BWP (Boiling Waterproof) plywood, HDHMR boards, and branded hardware/accessories from <b>Hettich</b>, <b>Cassetto</b>, <b>Ozone</b>, <b>Olive</b>, and <b>Ebco</b>. Shutters are available in lacquer, acrylic, membrane PVC, laminate, and veneer finishes.
+                We use BWP (Boiling Waterproof) plywood, HDHMR boards, and branded hardware/accessories from <b>Hettich</b>, <b>Cassetto</b>, <b>Ozone</b>, <b>Olive</b>, and <b>Ebco</b> which gives high strength, durability, and a premium finish to our products.
               </p>
               <p className="font-body text-sm leading-relaxed" style={{ color: 'var(--ash)' }}>
                 Come to our showroom and touch the materials yourself before you decide.

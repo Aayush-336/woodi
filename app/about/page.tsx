@@ -26,24 +26,7 @@ export default function AboutPage() {
       {/* ── KETAN STORY ───────────────────────────────────── */}
       <section className="py-20 md:py-28" style={{ background: 'var(--cream)' }}>
         <div className="max-w-6xl mx-auto px-5 md:px-8">
-          <div className="grid md:grid-cols-2 gap-12 md:gap-20 items-start">
-            {/* Photo */}
-            <div className="reveal-left sticky top-28">
-              <div className="aspect-[3/4] rounded-2xl overflow-hidden shadow-2xl relative">
-                <div style={{ background: 'linear-gradient(150deg, var(--sand), var(--warm), var(--sienna))', position: 'absolute', inset: 0 }} />
-                <div className="absolute inset-0 flex items-end p-6">
-                  <div className="w-full rounded-xl p-4" style={{ background: 'rgba(44,36,22,0.75)', backdropFilter: 'blur(8px)' }}>
-                    <p className="font-display text-lg font-semibold" style={{ color: 'var(--cream)' }}>Het Shah</p>
-                    <p className="font-sans text-xs tracking-wide" style={{ color: 'var(--warm)' }}>Founder · Civil Engineer · IITRAM Ahmedabad</p>
-                    <p className="font-sans text-xs mt-1" style={{ color: 'var(--ash)' }}>4+ years in this field</p>
-                  </div>
-                </div>
-              </div>
-              <p className="font-sans text-xs text-center mt-3 italic" style={{ color: 'var(--ash)' }}>
-                [ Replace with your photo ]
-              </p>
-            </div>
-
+          <div className="grid md:grid-cols-1 gap-12 md:gap-20 items-start">
             {/* Story */}
             <div className="reveal-right">
               <p className="section-label mb-4">The Beginning</p>
@@ -69,7 +52,7 @@ export default function AboutPage() {
 
               <div className="mt-10 grid grid-cols-2 gap-6">
                 {[
-                  { num: '20+', label: 'Projects delivered' },
+                  { num: '30+', label: 'Projects delivered' },
                   { num: '4+', label: 'Years of experience' },
                   { num: '4.7★', label: 'Google rating' },
                   { num: '100%', label: 'Personal service' },

@@ -39,7 +39,7 @@ export default function Navbar() {
         {/* Logo */}
         <Link href="/" className="group">
           <Image
-            src="/branding/woodi-complete-logo.png"
+            src="/branding/woodi%20logo.svg"
             alt="Woodi"
             width={190}
             height={60}

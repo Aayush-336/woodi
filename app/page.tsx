@@ -17,7 +17,7 @@ export default function Home() {
         <div className="absolute right-[-5%] top-1/2 -translate-y-1/2 w-[450px] h-[450px] rounded-full border border-[var(--bark)] opacity-15" />
         <div className="absolute right-[0%] top-1/2 -translate-y-1/2 w-[300px] h-[300px] rounded-full border border-[var(--terracotta)] opacity-20" />
 
-        <div className="relative max-w-6xl mx-auto px-5 md:px-8 pt-24 pb-16 md:pt-32 md:pb-20">
+        <div className="relative max-w-6xl mx-auto px-5 md:px-8 pt-24 pb-20 md:pt-32 md:pb-24">
           <div className="max-w-2xl">
             <p className="section-label mb-5 animate-fade-in">Paldi, Ahmedabad · Est. 2022</p>
             <h1
@@ -29,7 +29,7 @@ export default function Home() {
               by Woodi.
             </h1>
             <p className="font-body text-lg md:text-xl leading-relaxed mb-10 max-w-xl" style={{ color: 'var(--warm)' }}>
-              Ahmedabad&apos;s most personal modular kitchen studio. From L-shaped and U-shaped kitchens to wardrobes and Turnkey projects, we design every space around your life, start to finish.
+              Ahmedabad&apos;s most personal modular furniture studio. From kitchens to wardrobes and Turnkey projects, we design every space around your life, start to finish.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <a
@@ -53,7 +53,7 @@ export default function Home() {
         </div>
 
         {/* Scroll hint */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-bounce">
+        <div className="absolute bottom-2 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-bounce">
           <div className="w-px h-10" style={{ background: 'linear-gradient(to bottom, transparent, var(--warm))' }} />
           <span className="font-sans text-[9px] tracking-[0.2em] uppercase" style={{ color: 'var(--ash)' }}>Scroll</span>
         </div>
@@ -65,9 +65,8 @@ export default function Home() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-4 text-center">
             {[
               { num: '4+', label: 'Years of Experience' },
-              { num: '20+', label: 'Projects Delivered' },
+              { num: '30+', label: 'Projects Delivered' },
               { num: '4.7★', label: 'Google Rating' },
-              { num: '1', label: 'Founder — Het Shah' },
             ].map((s, i) => (
               <div key={i} className={`reveal delay-${i + 1}`}>
                 <p className="font-display text-4xl md:text-5xl font-semibold" style={{ color: 'var(--sienna)' }}>{s.num}</p>
@@ -81,19 +80,7 @@ export default function Home() {
       {/* ── INTRO ─────────────────────────────────────────── */}
       <section className="py-20 md:py-28" style={{ background: 'var(--cream)' }}>
         <div className="max-w-6xl mx-auto px-5 md:px-8">
-          <div className="grid md:grid-cols-2 gap-12 md:gap-20 items-center">
-            <div className="reveal-left">
-              {/* Photo placeholder */}
-              <div className="aspect-[4/5] rounded-2xl img-placeholder relative overflow-hidden shadow-xl">
-                <div className="absolute inset-0" style={{ background: 'linear-gradient(135deg, var(--sand), var(--warm), var(--terracotta))' }} />
-                <div className="absolute inset-0 flex items-end p-6">
-                  <div className="bg-white/90 rounded-xl px-4 py-3 backdrop-blur-sm">
-                    <p className="font-display text-sm font-semibold" style={{ color: 'var(--bark)' }}>Het Shah</p>
-                    <p className="font-sans text-xs" style={{ color: 'var(--ash)' }}>Founder · Civil Engineer · IITRAM Ahmedabad</p>
-                  </div>
-                </div>
-              </div>
-            </div>
+          <div className="grid md:grid-cols-1 gap-12 md:gap-20 items-center">
             <div className="reveal-right">
               <p className="section-label mb-4">Who We Are</p>
               <h2 className="font-display text-4xl md:text-5xl font-semibold leading-tight mb-6" style={{ color: 'var(--charcoal)' }}>
@@ -146,26 +133,38 @@ export default function Home() {
               {
                 icon: '🏠',
                 title: 'Turnkey Projects',
-                desc: 'TV units, crockery units, study areas, and full home furniture solutions designed to match your kitchen and wardrobe aesthetic.',
+                desc: 'For your 2/3/4 BHK house',
+                offerList: 'Modular Kitchen, Wardrobes, TV Unit, Sofa Set, Dining Table, Double Bed, Dressing & Side Table, Study Table, Safety Door, Temple, and Shoe Rack.',
                 link: '/services#furniture',
               },
             ].map((s, i) => (
-              <div
+              <Link
                 key={i}
-                className={`reveal delay-${i + 1} group rounded-2xl p-7 md:p-8 transition-all duration-300 hover:shadow-lg hover:-translate-y-1`}
+                href={s.link}
+                className={`reveal delay-${i + 1} group rounded-2xl p-7 md:p-8 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 block`}
                 style={{ background: 'var(--cream)' }}
               >
                 <span className="text-4xl block mb-4">{s.icon}</span>
                 <h3 className="font-display text-xl font-semibold mb-3" style={{ color: 'var(--charcoal)' }}>{s.title}</h3>
-                <p className="font-body text-sm leading-relaxed mb-5" style={{ color: 'var(--ash)' }}>{s.desc}</p>
-                <Link
-                  href={s.link}
+                <div className="font-body text-sm leading-relaxed mb-5" style={{ color: 'var(--ash)' }}>
+                  <p>{s.desc}</p>
+                  {'offerList' in s ? (
+                    <p className="mt-2">
+                      <span className="font-sans text-[11px] tracking-[0.18em] uppercase" style={{ color: 'var(--terracotta)' }}>
+                        We Offer:
+                      </span>
+                      <br />
+                      <span>{s.offerList}</span>
+                    </p>
+                  ) : null}
+                </div>
+                <span
                   className="font-sans text-xs font-medium inline-flex items-center gap-1.5 group-hover:gap-2.5 transition-all"
                   style={{ color: 'var(--terracotta)' }}
                 >
                   Learn more →
-                </Link>
-              </div>
+                </span>
+              </Link>
             ))}
           </div>
         </div>

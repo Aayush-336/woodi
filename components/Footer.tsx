@@ -10,7 +10,7 @@ export default function Footer() {
           {/* Brand */}
           <div>
             <Image
-              src="/branding/woodi-complete-logo.png"
+              src="/branding/Woodi%20full.svg"
               alt="Woodi"
               width={200}
               height={70}
@@ -27,6 +27,13 @@ export default function Footer() {
               ))}
               <span className="font-sans text-xs ml-1" style={{ color: 'var(--ash)' }}>4.7 · 14 Reviews</span>
             </div>
+            <Image
+              src="/branding/Symbol.svg"
+              alt="Woodi symbol"
+              width={320}
+              height={120}
+              className="w-[70%] h-auto mt-5 brightness-0 invert"
+            />
           </div>
 
           {/* Quick Links */}
@@ -105,7 +112,7 @@ export default function Footer() {
 
         <div className="mt-12 pt-6 flex flex-col md:flex-row items-center justify-between gap-3" style={{ borderTop: '1px solid rgba(255,255,255,0.08)' }}>
           <p className="font-sans text-xs" style={{ color: 'var(--ash)' }}>
-            © 2024 Woodi Modular furnitures. All rights reserved.
+            © 2026 Woodi Modular furnitures. All rights reserved.
           </p>
           <p className="font-sans text-xs" style={{ color: 'var(--ash)' }}>
             Paldi, Ahmedabad · Mon–Sat 10am–7pm
